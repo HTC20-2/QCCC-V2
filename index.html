@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Queen City Can Cleaning | Charlotte's Cleanest Trash Cans</title>
+<meta name="description" content="Professional trash can cleaning in Charlotte that eliminates odors, bacteria, grime, and pests. Eco-friendly, sanitized at the curb, recurring plans." />
+<meta name="theme-color" content="#111111" />
+
+<!-- ============================ FAVICONS / ICONS ============================ -->
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<!-- [REPLACE] canonical + og:url with your real domain -->
+<link rel="canonical" href="https://queen-city-can-cleaning.vercel.app/" />
+
+<!-- ===================== SOCIAL SHARE (OG / TWITTER) ===================== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Queen City Can Cleaning" />
+<meta property="og:title" content="Charlotte's Cleanest Trash Cans" />
+<meta property="og:description" content="Professional trash can cleaning that eliminates odors, bacteria, grime &amp; pests. Eco-friendly, sanitized at the curb, satisfaction guaranteed." />
+<meta property="og:url" content="https://queen-city-can-cleaning.vercel.app/" />
+<meta property="og:image" content="https://queen-city-can-cleaning.vercel.app/og-image.png" />
+<meta property="og:image:secure_url" content="https://queen-city-can-cleaning.vercel.app/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Queen City Can Cleaning | Charlotte's Cleanest Trash Cans" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Charlotte's Cleanest Trash Cans" />
+<meta name="twitter:description" content="Professional trash can cleaning that eliminates odors, bacteria, grime &amp; pests. Charlotte, NC." />
+<meta name="twitter:image" content="https://queen-city-can-cleaning.vercel.app/og-image.png" />
+
+<!-- ============================ FONTS ============================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   QUEEN CITY CAN CLEANING - premium dark-mode single-file site
+   Palette, type and motion all defined inline below.
+   NOTE: pricing, phone, email and service-area values are
+   PLACEHOLDERS marked [REPLACE]. Swap before launch.
+   ============================================================ */
+
+:root{
+  --charcoal:#111111;
+  --graphite:#1a1a1a;
+  --slate:#222222;
+  --slate-2:#262626;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.14);
+
+  --white:#ffffff;
+  --gray:#d9d9d9;
+  --muted:#8d8f8c;
+  --muted-2:#6c6e6b;
+
+  --green:#66cc33;
+  --green-bright:#82e84f;
+  --green-deep:#3f8f1f;
+  --green-glow:rgba(102,204,51,.45);
+
+  --amber:#ff9d4d;            /* warm sunrise */
+  --amber-soft:#ffc371;
+
+  --maxw:1200px;
+  --radius:18px;
+  --radius-lg:26px;
+  --ease:cubic-bezier(.22,1,.36,1);
+
+  --shadow-soft:0 22px 60px -24px rgba(0,0,0,.85);
+  --shadow-card:0 1px 0 rgba(255,255,255,.04) inset, 0 30px 60px -30px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  background:var(--charcoal);
+  color:var(--gray);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--green);color:#08210a}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+h1,h2,h3,.display{
+  font-family:"Archivo",sans-serif;
+  color:var(--white);
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.02;
+  font-stretch:125%;             /* expanded, that premium industrial feel */
+}
+.eyebrow{
+  font-family:"Archivo",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.32em;
+  font-size:.72rem;
+  font-weight:700;
+  color:var(--green);
+}
+.green{color:var(--green)}
+.section{position:relative;padding:clamp(72px,11vw,140px) 0}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.bg-graphite{background:var(--graphite)}
+.bg-charcoal{background:var(--charcoal)}
+
+/* hairline divider between alternating sections */
+.section + .section::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:min(var(--maxw),calc(100% - 48px));height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-strong),transparent);
+}
+
+/* ============================ BUTTONS ============================ */
+.btn{
+  --b:transparent;
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:.95rem;
+  letter-spacing:.01em;
+  display:inline-flex;align-items:center;gap:.6em;
+  padding:.92em 1.5em;border-radius:999px;cursor:pointer;border:1px solid var(--b);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),color .25s;
+  white-space:nowrap;
+}
+.btn svg{width:1.05em;height:1.05em;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{
+  background:linear-gradient(180deg,var(--green-bright),var(--green));
+  color:#0a2208;
+  box-shadow:0 10px 30px -10px var(--green-glow),0 0 0 1px rgba(130,232,79,.25) inset;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px -12px var(--green-glow),0 0 0 1px rgba(130,232,79,.4) inset}
+.btn-ghost{
+  background:rgba(255,255,255,.03);color:var(--white);--b:var(--line-strong);
+  backdrop-filter:blur(6px);
+}
+.btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+
+/* ============================ LOGO ============================ */
+.logo{display:inline-flex;align-items:center;gap:.7rem;line-height:1}
+.logo-img{display:block;width:auto;height:42px;filter:drop-shadow(0 0 14px rgba(102,204,51,.22))}
+footer .logo-img.foot{height:56px;margin-bottom:6px}
+@media(max-width:480px){.logo-img{height:34px}}
+.logo .mark{position:relative;display:block;filter:drop-shadow(0 0 10px rgba(102,204,51,.28))}
+.logo .mark svg{display:block}
+.logo .crown{filter:drop-shadow(0 0 6px rgba(102,204,51,.55))}
+.logo .word{display:flex;flex-direction:column;gap:2px}
+.logo .word .l1{
+  font-family:"Archivo",sans-serif;font-weight:800;font-stretch:115%;
+  font-size:1.02rem;letter-spacing:.04em;color:var(--white);line-height:1;
+}
+.logo .word .l2{
+  font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:.56rem;letter-spacing:.34em;color:var(--green);line-height:1;
+  display:flex;align-items:center;gap:.45em;
+}
+.logo .word .l2::before,.logo .word .l2::after{content:"";height:1px;width:14px;background:var(--green);opacity:.7}
+
+/* ============================ NAV ============================ */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:background .4s var(--ease),border-color .4s,backdrop-filter .4s;
+  border-bottom:1px solid transparent;
+}
+header.nav.scrolled{
+  background:rgba(15,15,15,.72);backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{
+  font-size:.92rem;color:var(--gray);font-weight:500;position:relative;padding:4px 0;transition:color .25s;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;background:var(--green);transition:width .3s var(--ease)}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:.9rem;color:var(--gray);font-weight:600;white-space:nowrap}
+.nav-phone:hover{color:var(--green)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:.3s var(--ease)}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate;padding:104px 0 64px}
+.hero-bg{position:absolute;inset:0;z-index:-3;background:
+    radial-gradient(120% 75% at 72% 100%, rgba(255,157,77,.16), transparent 52%),
+    radial-gradient(70% 50% at 70% 100%, rgba(255,195,113,.12), transparent 48%),
+    radial-gradient(55% 45% at 12% 8%, rgba(102,204,51,.07), transparent 60%),
+    linear-gradient(180deg,#0c0c0c 0%, #111 42%, #15110d 100%);
+}
+/* sunrise breathing glow */
+.hero-sun{
+  position:absolute;left:62%;bottom:-6%;width:60vw;height:60vw;max-width:720px;max-height:720px;
+  transform:translateX(-50%);z-index:-3;border-radius:50%;
+  background:radial-gradient(circle at center, rgba(255,180,90,.30), rgba(255,140,60,.10) 40%, transparent 66%);
+  filter:blur(8px);animation:sun 9s var(--ease) infinite;
+}
+@keyframes sun{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.06)}}
+
+/* skyline silhouette */
+.skyline{position:absolute;left:0;right:0;bottom:0;z-index:-2;width:100%;height:auto;opacity:.92;pointer-events:none}
+.skyline path{fill:#0b0b0c}
+.skyline .rim{stroke:rgba(255,180,110,.45);stroke-width:1.4;fill:none}
+
+/* grain + vignette */
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 30%, transparent 55%, rgba(0,0,0,.55));
+}
+.particles{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.particles i{
+  position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;
+  background:var(--green-bright);box-shadow:0 0 8px var(--green-glow);opacity:0;
+  animation:float linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0) translateX(0);opacity:0}
+  10%{opacity:.7}
+  90%{opacity:.5}
+  100%{transform:translateY(-105svh) translateX(var(--drift,20px));opacity:0}
+}
+
+.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.hero-content{max-width:760px}
+.hero .eyebrow{margin-bottom:22px}
+.hero h1{
+  font-size:clamp(2.9rem,8vw,6.1rem);font-weight:900;font-stretch:130%;
+  text-transform:uppercase;line-height:.92;letter-spacing:-.01em;
+}
+.hero h1 .green{display:inline-block;text-shadow:0 0 38px rgba(102,204,51,.35)}
+.hero p.sub{
+  margin:26px 0 36px;font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--gray);
+  max-width:560px;font-weight:400;
+}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+
+/* trust badges */
+.trust{display:flex;flex-wrap:wrap;gap:30px 44px;margin-top:54px;padding-top:30px;border-top:1px solid var(--line)}
+.trust .t{display:flex;align-items:center;gap:12px;max-width:200px}
+.trust .t .ic{
+  width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(102,204,51,.16),rgba(102,204,51,.04));
+  border:1px solid rgba(102,204,51,.28);color:var(--green-bright);
+}
+.trust .t .ic svg{width:21px;height:21px}
+.trust .t span{font-family:"Archivo",sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--white);line-height:1.25}
+
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:1;color:var(--muted);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase}
+.scroll-cue .mouse{width:22px;height:34px;border:1.5px solid var(--line-strong);border-radius:12px;position:relative}
+.scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:7px;transform:translateX(-50%);width:3px;height:6px;border-radius:2px;background:var(--green);animation:wheel 1.8s var(--ease) infinite}
+@keyframes wheel{0%{opacity:0;top:6px}30%{opacity:1}60%{opacity:1;top:15px}100%{opacity:0;top:18px}}
+
+/* ============================ SECTION HEADINGS ============================ */
+.head{max-width:680px;margin-bottom:clamp(40px,6vw,72px)}
+.head.center{margin-left:auto;margin-right:auto;text-align:center}
+.head .eyebrow{margin-bottom:18px;display:inline-block}
+.head h2{font-size:clamp(2rem,4.6vw,3.4rem);font-stretch:120%}
+.head p{margin-top:18px;font-size:1.1rem;color:var(--muted);max-width:560px}
+.head.center p{margin-left:auto;margin-right:auto}
+
+/* ============================ STEPS ============================ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step}
+.step{
+  position:relative;padding:30px 26px 32px;border-radius:var(--radius);
+  background:linear-gradient(180deg,var(--slate),#1c1c1c);
+  border:1px solid var(--line);box-shadow:var(--shadow-card);overflow:hidden;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  position:absolute;top:18px;right:22px;font-family:"Archivo",sans-serif;font-weight:900;
+  font-size:2.6rem;font-stretch:125%;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.1);
+}
+.step .si{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:24px;
+  background:linear-gradient(180deg,rgba(102,204,51,.18),rgba(102,204,51,.04));
+  border:1px solid rgba(102,204,51,.3);color:var(--green-bright)}
+.step .si svg{width:26px;height:26px}
+.step h3{font-size:1.18rem;font-stretch:110%;margin-bottom:10px}
+.step p{font-size:.96rem;color:var(--muted)}
+.step .glow{position:absolute;inset:0;background:radial-gradient(80% 60% at 50% -10%,rgba(102,204,51,.12),transparent 60%);opacity:0;transition:opacity .4s}
+.step:hover .glow{opacity:1}
+
+/* ============================ INCLUDED / SERVICES ============================ */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center}
+.features{display:grid;gap:14px}
+.feat{
+  display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:16px;
+  background:rgba(255,255,255,.025);border:1px solid var(--line);transition:.35s var(--ease);
+}
+.feat:hover{border-color:rgba(102,204,51,.35);background:rgba(102,204,51,.04);transform:translateX(4px)}
+.feat .fi{width:38px;height:38px;flex:none;border-radius:11px;display:grid;place-items:center;color:var(--green-bright);
+  background:linear-gradient(180deg,rgba(102,204,51,.16),rgba(102,204,51,.03));border:1px solid rgba(102,204,51,.26)}
+.feat .fi svg{width:20px;height:20px}
+.feat h4{font-family:"Archivo",sans-serif;color:var(--white);font-size:1.02rem;font-weight:700;margin-bottom:3px}
+.feat p{font-size:.93rem;color:var(--muted)}
+
+/* visual panel (stat / glass) */
+.glass-panel{
+  position:relative;border-radius:var(--radius-lg);padding:38px;overflow:hidden;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  border:1px solid var(--line-strong);box-shadow:var(--shadow-soft);
+  backdrop-filter:blur(8px);
+}
+.glass-panel::before{content:"";position:absolute;top:-40%;right:-20%;width:70%;height:120%;
+  background:radial-gradient(circle,rgba(102,204,51,.22),transparent 65%);filter:blur(10px)}
+.glass-panel .pc{position:relative}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.stat{padding:22px;border-radius:16px;background:rgba(0,0,0,.35);border:1px solid var(--line)}
+.stat .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:120%;font-size:2.4rem;color:var(--white);line-height:1}
+.stat .n .green{font-size:1.4rem;vertical-align:top}
+.stat .l{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:8px}
+.panel-quote{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);font-size:1.02rem;color:var(--gray)}
+.panel-quote b{color:var(--white)}
+
+/* ============================ WHY US / ABOUT ============================ */
+.about-body p{font-size:1.06rem;color:var(--gray);line-height:1.75;margin-bottom:18px;max-width:560px}
+.pull-quote{
+  margin:32px 0 0;padding:6px 0 6px 24px;border-left:3px solid var(--green);
+  font-family:"Archivo",sans-serif;font-weight:700;font-stretch:110%;
+  font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.25;letter-spacing:-.01em;
+  color:var(--green);text-shadow:0 0 32px rgba(102,204,51,.28);max-width:560px;
+}
+.about-photo{display:flex;align-items:center;margin:0}
+.photo-frame{
+  position:relative;width:100%;aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;margin:0;
+  border:1px solid var(--line-strong);box-shadow:var(--shadow-soft);
+}
+.photo-frame img{display:block;width:100%;height:100%;object-fit:cover}
+/* subtle green edge glow + a faint top sheen to seat the photo in the dark UI */
+.photo-frame::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05), inset 0 -40px 70px -40px rgba(0,0,0,.6);
+  background:radial-gradient(80% 50% at 80% 0%, rgba(102,204,51,.10), transparent 60%)}
+
+/* ============================ BEFORE / AFTER ============================ */
+.ba-wrap{max-width:920px;margin:0 auto}
+.ba{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;
+  border:1px solid var(--line-strong);box-shadow:var(--shadow-soft);cursor:ew-resize;user-select:none;
+  background:#0d0d0d;
+}
+.ba .side{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.ba .grime{background:
+   radial-gradient(60% 80% at 30% 70%, rgba(90,70,40,.55), transparent 60%),
+   radial-gradient(50% 70% at 75% 40%, rgba(60,55,40,.5), transparent 55%),
+   repeating-linear-gradient(135deg, rgba(40,35,25,.25) 0 6px, transparent 6px 13px),
+   linear-gradient(160deg,#2a261d,#15140f);
+}
+.ba .clean{background:
+   radial-gradient(70% 80% at 60% 30%, rgba(102,204,51,.18), transparent 60%),
+   linear-gradient(160deg,#1d2a17,#0f150c);
+   clip-path:inset(0 0 0 50%);
+}
+.ba .can{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:125%;letter-spacing:.04em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px}
+.ba .can .lbl{font-size:clamp(1.4rem,4vw,2.4rem)}
+.ba .grime .can{color:rgba(255,255,255,.55)}
+.ba .grime .can .tag{font-size:.7rem;letter-spacing:.25em;color:rgba(255,180,120,.8);font-weight:700}
+.ba .clean .can{color:#fff;text-shadow:0 0 26px rgba(102,204,51,.5)}
+.ba .clean .can .tag{font-size:.7rem;letter-spacing:.25em;color:var(--green-bright);font-weight:700}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--green);box-shadow:0 0 18px var(--green-glow);z-index:3}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;
+  background:rgba(17,17,17,.85);border:1.5px solid var(--green);display:grid;place-items:center;z-index:4;backdrop-filter:blur(4px);box-shadow:0 0 22px var(--green-glow)}
+.ba .knob svg{width:22px;height:22px;color:var(--green-bright)}
+.ba .pill{position:absolute;top:16px;font-family:"Archivo",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:999px;z-index:3;backdrop-filter:blur(6px)}
+.ba .pill.b{left:16px;background:rgba(0,0,0,.45);color:var(--amber-soft);border:1px solid rgba(255,180,110,.3)}
+.ba .pill.a{right:16px;background:rgba(102,204,51,.14);color:var(--green-bright);border:1px solid rgba(102,204,51,.4)}
+
+/* ============================ PRICING ============================ */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{
+  position:relative;display:flex;flex-direction:column;padding:34px 30px 32px;border-radius:var(--radius-lg);
+  background:linear-gradient(180deg,var(--slate),#1b1b1b);border:1px solid var(--line);
+  box-shadow:var(--shadow-card);transition:.4s var(--ease);
+}
+.plan:hover{transform:translateY(-6px);border-color:var(--line-strong)}
+.plan.featured{
+  background:linear-gradient(180deg,#1f2a16,#15170f);
+  border:1px solid rgba(102,204,51,.5);box-shadow:0 0 0 1px rgba(102,204,51,.15),0 40px 80px -36px rgba(102,204,51,.4);
+}
+.plan.featured::before{content:"Most Popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:6px 16px;border-radius:999px;background:linear-gradient(180deg,var(--green-bright),var(--green));color:#0a2208;
+  box-shadow:0 8px 24px -8px var(--green-glow)}
+.plan .pname{font-family:"Archivo",sans-serif;font-weight:700;font-size:1.05rem;color:var(--white);text-transform:uppercase;letter-spacing:.08em}
+.plan .pdesc{font-size:.9rem;color:var(--muted);margin-top:6px;min-height:40px}
+.plan .price{display:flex;align-items:flex-end;gap:4px;margin:22px 0 4px}
+.plan .price .cur{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.5rem;color:var(--white);line-height:1.4}
+.plan .price .amt{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:120%;font-size:3.2rem;color:var(--white);line-height:1}
+.plan.featured .price .amt{color:var(--green-bright);text-shadow:0 0 30px rgba(102,204,51,.4)}
+.plan .price .per{font-size:.95rem;color:var(--muted);margin-bottom:8px}
+.plan ul{list-style:none;display:grid;gap:13px;margin:24px 0 28px;flex:1}
+.plan li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;color:var(--gray)}
+.plan li svg{width:18px;height:18px;flex:none;color:var(--green);margin-top:3px}
+.plan .btn{width:100%;justify-content:center}
+.price-note{text-align:center;margin-top:26px;font-size:.86rem;color:var(--muted-2)}
+
+/* ============================ QUOTE / CTA ============================ */
+.cta-band{position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  background:linear-gradient(165deg,#172011,#121311);border:1px solid rgba(102,204,51,.25);
+  padding:clamp(40px,6vw,68px);box-shadow:var(--shadow-soft)}
+.cta-band::before{content:"";position:absolute;top:-50%;right:-10%;width:55%;height:200%;
+  background:radial-gradient(circle,rgba(102,204,51,.18),transparent 60%);filter:blur(10px)}
+.cta-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px);align-items:center}
+.cta-grid h2{font-size:clamp(1.9rem,4vw,3rem);font-stretch:120%}
+.cta-grid .sub{margin-top:16px;color:var(--gray);font-size:1.05rem;max-width:420px}
+.cta-list{margin-top:24px;display:grid;gap:11px}
+.cta-list .ci{display:flex;gap:10px;align-items:center;font-size:.96rem;color:var(--gray)}
+.cta-list svg{width:18px;height:18px;color:var(--green);flex:none}
+
+form.quote{display:grid;gap:14px;background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:var(--radius);padding:26px;backdrop-filter:blur(8px)}
+form.quote .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form.quote label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600;display:block;margin-bottom:7px}
+form.quote input,form.quote select{
+  width:100%;padding:13px 15px;border-radius:11px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line-strong);color:var(--white);font-family:inherit;font-size:.95rem;transition:.25s;
+}
+form.quote input::placeholder{color:var(--muted-2)}
+form.quote input:focus,form.quote select:focus{outline:none;border-color:var(--green);background:rgba(102,204,51,.06);box-shadow:0 0 0 3px rgba(102,204,51,.12)}
+form.quote select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238d8f8c' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
+form.quote .btn{margin-top:4px;justify-content:center}
+.form-note{font-size:.78rem;color:var(--muted-2);text-align:center}
+
+/* ============================ FOOTER ============================ */
+footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;position:relative}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot-brand p{margin-top:20px;color:var(--muted);font-size:.95rem;max-width:300px}
+.foot-col h5{font-family:"Archivo",sans-serif;color:var(--white);font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:18px}
+.foot-col a,.foot-col p{display:block;color:var(--muted);font-size:.93rem;margin-bottom:11px;transition:color .25s}
+.foot-col a:hover{color:var(--green)}
+.foot-bottom{margin-top:54px;padding-top:26px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot-bottom p{font-size:.85rem;color:var(--muted-2)}
+.socials{display:flex;gap:12px}
+.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-strong);color:var(--gray);transition:.3s var(--ease)}
+.socials a:hover{color:var(--green);border-color:var(--green);transform:translateY(-2px)}
+.socials svg{width:17px;height:17px}
+
+/* ============================ REVEAL ANIM ============================ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* hero load stagger */
+.hero .anim{opacity:0;transform:translateY(26px);animation:rise .9s var(--ease) forwards}
+.hero .anim.a1{animation-delay:.15s}.hero .anim.a2{animation-delay:.32s}.hero .anim.a3{animation-delay:.5s}
+.hero .anim.a4{animation-delay:.68s}.hero .anim.a5{animation-delay:.86s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* ============================ RESPONSIVE ============================ */
+@media(max-width:980px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .split,.cta-grid{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .plan.featured{order:-1}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .nav-phone{display:none}
+  .burger{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:rgba(13,13,13,.96);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px 24px 20px}
+  .nav-links.open a{padding:15px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links.open a::after{display:none}
+  form.quote .row{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+  .trust{gap:22px 30px}
+  .hero{align-items:flex-start;padding-top:96px}
+  .scroll-cue{display:none}
+  /* compact nav CTA so it stops crowding the logo */
+  .nav-inner{padding:14px 18px}
+  .nav-cta{gap:10px}
+  .nav-quote{padding:.58em .95em;font-size:.82rem;gap:.4em}
+  .nav-quote .cta-extra{display:none}
+  .nav-quote svg{width:.95em;height:.95em}
+}
+@media(max-width:480px){
+  .steps{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.5rem,12vw,3.4rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+  .hero .anim{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="Queen City Can Cleaning home">
+      <img class="logo-img" src="logo-horiz.png" alt="Queen City Can Cleaning" width="1200" height="265" />
+    </a>
+
+    <nav class="nav-links" id="navlinks">
+      <a href="#how">How It Works</a>
+      <a href="#included">What's Included</a>
+      <a href="#results">Results</a>
+      <a href="#about">Why Us</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+17049893833" class="nav-phone">(704)&nbsp;989-3833</a>
+      <a href="#quote" class="btn btn-primary nav-quote"><span class="cta-extra">Get </span>Started
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-sun"></div>
+
+  <!-- Charlotte skyline silhouette -->
+  <svg class="skyline" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,300 L0,210 L40,210 L40,180 L70,180 L70,210 L110,210 L110,150 L130,150 L130,120 L150,120 L150,150 L170,150 L170,210
+      L210,210 L210,160 L230,140 L250,160 L250,210
+      L300,210 L300,120 L312,108 L312,60 L320,52 L328,60 L328,108 L340,120 L340,210
+      L390,210 L390,170 L420,170 L420,140 L450,140 L450,170 L470,170 L470,210
+      L520,210 L520,90 L532,78 L532,40 L540,30 L548,40 L548,78 L560,90 L560,210
+      L610,210 L610,150 L640,150 L640,120 L660,120 L660,150 L690,150 L690,210
+      L740,210 L740,100 L752,86 L752,52 L760,44 L768,52 L768,86 L780,100 L780,210
+      L840,210 L840,160 L860,160 L860,130 L890,130 L890,160 L910,160 L910,210
+      L960,210 L960,118 L975,104 L975,210
+      L1020,210 L1020,150 L1050,150 L1050,170 L1080,170 L1080,150 L1100,150 L1100,210
+      L1150,210 L1150,135 L1162,122 L1162,80 L1170,72 L1178,80 L1178,122 L1190,135 L1190,210
+      L1240,210 L1240,165 L1270,165 L1270,140 L1290,140 L1290,165 L1310,165 L1310,210
+      L1360,210 L1360,175 L1390,175 L1390,150 L1410,150 L1410,180 L1440,180 L1440,300 Z" />
+  </svg>
+
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow anim a1">Charlotte&nbsp;·&nbsp;North Carolina</p>
+      <h1 class="anim a2">Charlotte's<br><span class="green">Cleanest</span> Trash Cans</h1>
+      <p class="sub anim a3">Professional trash can cleaning that eliminates odors, bacteria, grime, and pests. Sanitized at the curb, the day after your pickup.</p>
+      <div class="hero-ctas anim a4">
+        <a href="#quote" class="btn btn-primary">Get Started
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#pricing" class="btn btn-ghost">View Pricing
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="trust anim a5">
+        <div class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span><span>Eco-Friendly Cleaning</span></div>
+        <div class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l1.5 1.5L14 14"/></svg></span><span>Recurring Plans</span></div>
+        <div class="t"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8Z"/></svg></span><span>Satisfaction Guaranteed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><div class="mouse"></div>Scroll</div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section bg-graphite" id="how">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">The Process</span>
+      <h2>Spotless cans in four simple steps</h2>
+      <p>No hauling, no hose, no mess. We do the dirty work right at your curb.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1"><div class="glow"></div>
+        <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Book Online</h3>
+        <p>Pick a plan and your pickup day. Setup takes about a minute. No contracts.</p>
+      </div>
+      <div class="step reveal d2"><div class="glow"></div>
+        <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-7H6.5L5 17Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4M3 21h18"/></svg></div>
+        <h3>We Roll Up</h3>
+        <p>Our truck arrives the day after collection, while your cans are empty.</p>
+      </div>
+      <div class="step reveal d3"><div class="glow"></div>
+        <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-3 7-6 7-11 0-4-3-7-7-9-4 2-7 5-7 9 0 5 3 8 7 11Z"/><path d="M12 11v6M9.5 13.5 12 11l2.5 2.5"/></svg></div>
+        <h3>Blast & Sanitize</h3>
+        <p>Pressurized water and eco-safe solution scour every surface, killing 99.9% of bacteria.</p>
+      </div>
+      <div class="step reveal d4"><div class="glow"></div>
+        <div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Fresh & Dry</h3>
+        <p>Deodorized, dried and back in place. You come home to cans that smell like nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHAT'S INCLUDED ============================ -->
+<section class="section bg-charcoal" id="included">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="head reveal" style="margin-bottom:36px">
+          <span class="eyebrow">What's Included</span>
+          <h2>A deep clean, not a quick rinse</h2>
+          <p>Every visit is a full sanitation cycle, engineered to remove what a garden hose never could.</p>
+        </div>
+        <div class="features">
+          <div class="feat reveal d1">
+            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s7 3 7 9c0 4-3 7-7 11-4-4-7-7-7-11 0-6 7-9 7-9Z"/></svg></span>
+            <div><h4>Pressure Wash &amp; Scrub</h4><p>High-pressure cleaning lifts away caked-on grime, residue and stuck debris.</p></div>
+          </div>
+          <div class="feat reveal d2">
+            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg></span>
+            <div><h4>Sanitize &amp; Deodorize</h4><p>Hospital-grade, eco-safe solution kills 99.9% of bacteria and neutralizes odor.</p></div>
+          </div>
+          <div class="feat reveal d3">
+            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+            <div><h4>Eco-Friendly &amp; Contained</h4><p>Biodegradable detergents and full wastewater recapture, so nothing hits the storm drain.</p></div>
+          </div>
+          <div class="feat reveal d4">
+            <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13v8H3zM16 10h3l2 3v2h-5z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
+            <div><h4>Curbside &amp; Convenient</h4><p>We come to you, on schedule. No hauling cans around or wrestling a hose.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel reveal d2">
+        <div class="pc">
+          <span class="eyebrow">By The Numbers</span>
+          <div class="stat-row" style="margin-top:20px">
+            <div class="stat"><div class="n">24<span class="green">h</span></div><div class="l">After Your Pickup</div></div>
+            <div class="stat"><div class="n">99.9<span class="green">%</span></div><div class="l">Bacteria Killed</div></div>
+            <div class="stat"><div class="n">60<span class="green">s</span></div><div class="l">To Book Online</div></div>
+            <div class="stat"><div class="n">Zero</div><div class="l">Mess Left Behind</div></div>
+          </div>
+          <p class="panel-quote">"Our garage finally doesn't smell. The cans look brand new every month." <b>B. Culler, Madison Park</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BEFORE / AFTER ============================ -->
+<section class="section bg-graphite" id="results">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">The Difference</span>
+      <h2>Drag the line. See the transformation.</h2>
+      <p>From grime-coated and reeking to sanitized and fresh, every single visit.</p>
+    </div>
+    <div class="ba-wrap reveal d1">
+      <div class="ba" id="ba">
+        <div class="side grime"><div class="can"><span class="lbl">Before</span><span class="tag">Grime · Odor · Bacteria</span></div></div>
+        <div class="side clean" id="baClean"><div class="can"><span class="lbl">After</span><span class="tag">Sanitized · Fresh · Dry</span></div></div>
+        <span class="pill b">Before</span>
+        <span class="pill a">After</span>
+        <div class="handle" id="baHandle">
+          <div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHY US / MEET THE OWNERS ============================ -->
+<section class="section bg-charcoal" id="about">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="head reveal" style="margin-bottom:30px">
+          <span class="eyebrow">Meet the Owners</span>
+          <h2>Two Charlotte kids who aren't afraid of your trash can.</h2>
+        </div>
+        <div class="about-body reveal d1">
+          <p>We're Jack and Henry, two 19-year-olds who grew up here and played sports together. That taught us the stuff that turns out to matter a lot in this business: show up on time, do the job right, and never leave a teammate hanging.</p>
+          <p>So we picked the one chore nobody wants and decided to be the best in Charlotte at it. We give your cans a deep clean, kill the bacteria and the smell, and have them back at your curb before you even notice we stopped by.</p>
+          <p>No call center. No franchise. Just two local guys who answer their own phones and treat your house like our parents live down the street. Around here, they probably do.</p>
+          <blockquote class="pull-quote">We do the dirty work so you never think about it.</blockquote>
+        </div>
+      </div>
+
+      <div class="about-photo reveal d2">
+        <figure class="photo-frame">
+          <img src="jack-and-henry.jpg" alt="Jack and Henry, the owners of Queen City Can Cleaning, cleaning a trash can in a Charlotte backyard" width="1200" height="900" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRICING ============================ -->
+<section class="section bg-graphite" id="pricing">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>Simple plans. No contracts.</h2>
+      <p>Pick the rhythm that fits your home. Cancel or change anytime.</p>
+    </div>
+    <div class="plans">
+      <!-- [REPLACE] all prices/features below with real values -->
+      <div class="plan reveal d1">
+        <div class="pname">One-Time Reset</div>
+        <div class="pdesc">A first deep clean to bring neglected cans back to life.</div>
+        <div class="price"><span class="cur">$</span><span class="amt">35</span><span class="per">/ one-time</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Up to 2 cans included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pressure wash + sanitize</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Deodorize &amp; dry</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No commitment</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost">Choose Plan</a>
+      </div>
+
+      <div class="plan featured reveal d2">
+        <div class="pname">Monthly</div>
+        <div class="pdesc">Our most popular plan. Fresh cans, every single month.</div>
+        <div class="price"><span class="cur">$</span><span class="amt">25</span><span class="per">/ month</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Up to 2 cans included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Automatic monthly service</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority scheduling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Satisfaction guarantee</li>
+        </ul>
+        <a href="#quote" class="btn btn-primary">Choose Plan</a>
+      </div>
+
+      <div class="plan reveal d3">
+        <div class="pname">Quarterly</div>
+        <div class="pdesc">A seasonal refresh that keeps the worst buildup at bay.</div>
+        <div class="price"><span class="cur">$</span><span class="amt">40</span><span class="per">/ visit</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Up to 2 cans included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Service every 3 months</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Seasonal reminders</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No commitment</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost">Choose Plan</a>
+      </div>
+    </div>
+    <p class="price-note">Additional cans add a small per-can fee. Pricing shown is a placeholder. [REPLACE] with your real rates.</p>
+  </div>
+</section>
+
+<!-- ============================ QUOTE / CTA ============================ -->
+<section class="section bg-charcoal" id="quote">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow">Get Started</span>
+          <h2 style="margin-top:16px">Ready for the cleanest cans on the block?</h2>
+          <p class="sub">Tell us where you are and pick your plan. We'll confirm your first cleaning the same day.</p>
+          <div class="cta-list">
+            <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free to start, no commitment.</div>
+            <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Serving Charlotte &amp; surrounding areas</div>
+            <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No contracts, cancel anytime</div>
+          </div>
+        </div>
+
+        <form class="quote" id="quoteForm" novalidate>
+          <div class="row">
+            <div><label for="name">Name</label><input id="name" type="text" placeholder="Jane Smith" required /></div>
+            <div><label for="phone">Phone</label><input id="phone" type="tel" placeholder="(704) 555-0100" required /></div>
+          </div>
+          <div><label for="email">Email</label><input id="email" type="email" placeholder="jane@email.com" required /></div>
+          <div class="row">
+            <div><label for="zip">ZIP Code</label><input id="zip" type="text" inputmode="numeric" placeholder="28202" required /></div>
+            <div><label for="plan">Plan</label>
+              <select id="plan">
+                <option>Monthly (most popular)</option>
+                <option>Quarterly</option>
+                <option>One-Time Reset</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Start My Service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-note" id="formNote">Demo form, not yet connected. [REPLACE] with your form / CRM endpoint.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <img class="logo-img foot" src="logo-horiz.png" alt="Queen City Can Cleaning" width="1200" height="265" />
+        </a>
+        <p>Charlotte's premium trash can cleaning service. Cleaner cans, fewer pests, zero odor, guaranteed.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#how">How It Works</a>
+        <a href="#included">What's Included</a>
+        <a href="#results">Results</a>
+        <a href="#about">Why Us</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h5>Service Area</h5>
+        <p>Charlotte</p>
+        <p>Ballantyne · Matthews</p>
+        <p>Mint Hill · Pineville</p>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:+17049893833">(704) 989-3833</a>
+        <a href="mailto:QueenCityCanCleaning@gmail.com">QueenCityCanCleaning@gmail.com</a>
+        <p>Mon-Sat · 8am-6pm</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="yr">2026</span> Queen City Can Cleaning. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+        <a href="#" aria-label="QC mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13 L7.5 5 L11.5 9.5 L12 4 L16.5 9.5 L20.5 5 L23 13 Z" transform="translate(-2,2) scale(.78)" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- year ---------- */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- nav scroll state ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+/* ---------- mobile menu ---------- */
+const burger = document.getElementById('burger');
+const links = document.getElementById('navlinks');
+burger.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+/* ---------- hero particles ---------- */
+(function(){
+  const box = document.getElementById('particles');
+  const n = window.matchMedia('(max-width:720px)').matches ? 14 : 26;
+  for(let i=0;i<n;i++){
+    const p = document.createElement('i');
+    const size = 2 + Math.random()*3;
+    p.style.left = Math.random()*100 + '%';
+    p.style.width = p.style.height = size + 'px';
+    p.style.setProperty('--drift', (Math.random()*80-40) + 'px');
+    p.style.animationDuration = (9 + Math.random()*11) + 's';
+    p.style.animationDelay = (-Math.random()*16) + 's';
+    p.style.opacity = String(0.3 + Math.random()*0.5);
+    box.appendChild(p);
+  }
+})();
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- before / after slider ---------- */
+(function(){
+  const ba = document.getElementById('ba');
+  const clean = document.getElementById('baClean');
+  const handle = document.getElementById('baHandle');
+  let dragging = false;
+  const setPos = (clientX)=>{
+    const r = ba.getBoundingClientRect();
+    let pct = ((clientX - r.left)/r.width)*100;
+    pct = Math.max(4, Math.min(96, pct));
+    clean.style.clipPath = `inset(0 0 0 ${pct}%)`;
+    handle.style.left = pct + '%';
+  };
+  const start = e => { dragging = true; ba.style.cursor='grabbing'; setPos((e.touches?e.touches[0]:e).clientX); };
+  const move  = e => { if(!dragging) return; setPos((e.touches?e.touches[0]:e).clientX); };
+  const end   = () => { dragging = false; ba.style.cursor='ew-resize'; };
+  ba.addEventListener('mousedown', start); addEventListener('mousemove', move); addEventListener('mouseup', end);
+  ba.addEventListener('touchstart', start, {passive:true}); addEventListener('touchmove', move, {passive:true}); addEventListener('touchend', end);
+})();
+
+/* ---------- quote form (demo) ---------- */
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const note = document.getElementById('formNote');
+  if(!this.name.value || !this.email.value || !this.zip.value){
+    note.textContent = 'Please fill in your name, email and ZIP code.';
+    note.style.color = '#ff9d4d'; return;
+  }
+  note.textContent = 'Thanks! This is a demo. Connect a real endpoint to receive quotes.';
+  note.style.color = '#82e84f';
+  this.reset();
+});
+</script>
+</body>
+</html>
+
+
