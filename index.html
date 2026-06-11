@@ -765,16 +765,20 @@ footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;p
           </div>
         </div>
 
-        <form class="quote" id="quoteForm" novalidate>
+        <form class="quote" id="quoteForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Replace access_key with your Web3Forms access key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Cleaning Quote Request" />
+          <input type="hidden" name="from_name" value="Queen City Can Cleaning Website" />
           <div class="row">
-            <div><label for="name">Name</label><input id="name" type="text" placeholder="Jane Smith" required /></div>
-            <div><label for="phone">Phone</label><input id="phone" type="tel" placeholder="(704) 555-0100" required /></div>
+            <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required /></div>
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="(704) 555-0100" required /></div>
           </div>
-          <div><label for="email">Email</label><input id="email" type="email" placeholder="jane@email.com" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="jane@email.com" required /></div>
           <div class="row">
-            <div><label for="zip">ZIP Code</label><input id="zip" type="text" inputmode="numeric" placeholder="28202" required /></div>
+            <div><label for="zip">ZIP Code</label><input id="zip" name="zip" type="text" inputmode="numeric" placeholder="28202" required /></div>
             <div><label for="plan">Plan</label>
-              <select id="plan">
+              <select id="plan" name="plan">
                 <option>Monthly (most popular)</option>
                 <option>Quarterly</option>
                 <option>One-Time Reset</option>
@@ -785,7 +789,7 @@ footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;p
           <button type="submit" class="btn btn-primary">Start My Service
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
-          <p class="form-note" id="formNote">Demo form, not yet connected. [REPLACE] with your form / CRM endpoint.</p>
+          <p class="form-note" id="formNote">Enter your Web3Forms access key in the HTML code to receive emails at queencitycancleaning@gmail.com.</p>
         </form>
       </div>
     </div>
@@ -892,17 +896,50 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   ba.addEventListener('touchstart', start, {passive:true}); addEventListener('touchmove', move, {passive:true}); addEventListener('touchend', end);
 })();
 
-/* ---------- quote form (demo) ---------- */
+/* ---------- quote form submission ---------- */
 document.getElementById('quoteForm').addEventListener('submit', function(e){
   e.preventDefault();
   const note = document.getElementById('formNote');
-  if(!this.name.value || !this.email.value || !this.zip.value){
+  const form = this;
+  
+  if(!form.name.value || !form.email.value || !form.zip.value){
     note.textContent = 'Please fill in your name, email and ZIP code.';
-    note.style.color = '#ff9d4d'; return;
+    note.style.color = '#ff9d4d';
+    return;
   }
-  note.textContent = 'Thanks! This is a demo. Connect a real endpoint to receive quotes.';
-  note.style.color = '#82e84f';
-  this.reset();
+  
+  if(form.access_key.value === 'YOUR_ACCESS_KEY_HERE') {
+    note.textContent = 'Please configure your Web3Forms access_key in index.html to receive submissions.';
+    note.style.color = '#ff9d4d';
+    return;
+  }
+  
+  note.textContent = 'Sending your request...';
+  note.style.color = '#ff9d4d';
+  
+  const formData = new FormData(form);
+  
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      note.textContent = 'Thanks! Your request has been sent. We will contact you soon.';
+      note.style.color = '#82e84f';
+      form.reset();
+    } else {
+      note.textContent = 'Oops! There was a problem submitting your form.';
+      note.style.color = '#ff9d4d';
+    }
+  })
+  .catch(error => {
+    note.textContent = 'Oops! There was a problem submitting your form.';
+    note.style.color = '#ff9d4d';
+  });
 });
 </script>
 </body>
