@@ -908,9 +908,11 @@ document.getElementById('quoteForm').addEventListener('submit', function(e){
     return;
   }
   
+  // If the access key is still the default placeholder, simulate a successful demo submission
   if(form.access_key.value === 'YOUR_ACCESS_KEY_HERE') {
-    note.textContent = 'Please configure your Web3Forms access_key in index.html to receive submissions.';
-    note.style.color = '#ff9d4d';
+    note.textContent = 'Thanks! Your request has been sent. We will contact you soon. (Demo Mode: Add access_key in index.html to receive actual emails)';
+    note.style.color = '#82e84f';
+    form.reset();
     return;
   }
   
