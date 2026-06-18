@@ -772,7 +772,7 @@ footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;p
           <input type="hidden" name="from_name" value="Queen City Can Cleaning Website" />
           <div class="row">
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Jane Smith" required /></div>
-            <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="jane@email.com" required /></div>
+            <div><label for="contact">Email or Phone Number</label><input id="contact" name="contact" type="text" placeholder="jane@email.com or (704) 555-0100" required /></div>
           </div>
           <div><label for="address">Address</label><input id="address" name="address" type="text" placeholder="123 Queen City Way, Charlotte, NC" required /></div>
           <div class="row">
@@ -911,8 +911,19 @@ document.getElementById('quoteForm').addEventListener('submit', function(e){
   const note = document.getElementById('formNote');
   const form = this;
   
-  if(!form.name.value || !form.email.value || !form.address.value){
-    note.textContent = 'Please fill in your name, email and address.';
+  const contactVal = form.contact.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const digits = contactVal.replace(/\D/g, '');
+  const isPhone = digits.length >= 10 && digits.length <= 15;
+
+  if(!form.name.value || !contactVal || !form.address.value){
+    note.textContent = 'Please fill in your name, contact info and address.';
+    note.style.color = '#ff9d4d';
+    return;
+  }
+
+  if (!emailRegex.test(contactVal) && !isPhone) {
+    note.textContent = 'Please enter a valid email address or phone number.';
     note.style.color = '#ff9d4d';
     return;
   }
