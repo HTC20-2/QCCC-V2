@@ -373,7 +373,7 @@ header.nav.scrolled{
 .ba .pill.a{right:16px;background:rgba(102,204,51,.14);color:var(--green-bright);border:1px solid rgba(102,204,51,.4)}
 
 /* ============================ PRICING ============================ */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch}
 .plan{
   position:relative;display:flex;flex-direction:column;padding:34px 30px 32px;border-radius:var(--radius-lg);
   background:linear-gradient(180deg,var(--slate),#1b1b1b);border:1px solid var(--line);
@@ -744,6 +744,19 @@ footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;p
         </ul>
         <a href="#quote" class="btn btn-ghost">Choose Plan</a>
       </div>
+
+      <div class="plan reveal d4">
+        <div class="pname">Bi-Weekly</div>
+        <div class="pdesc">Maximum freshness. Sparkling clean cans all year round.</div>
+        <div class="price"><span class="cur">$</span><span class="amt">20</span><span class="per">/ visit</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Up to 2 cans included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Service every 2 weeks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No commitment</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost">Choose Plan</a>
+      </div>
     </div>
     <p class="price-note">Additional cans add a small per-can fee.</p>
   </div>
@@ -789,6 +802,7 @@ footer{background:#0c0c0c;border-top:1px solid var(--line);padding:70px 0 34px;p
             </div>
             <div><label for="plan">Plan</label>
               <select id="plan" name="plan">
+                <option>Bi-Weekly</option>
                 <option>Monthly</option>
                 <option>Quarterly</option>
                 <option>One time Refresh</option>
